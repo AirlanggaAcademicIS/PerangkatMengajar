@@ -7,7 +7,7 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <table width="297" border="1">
+  <table width="297" border="0">
     <tr>
       <td width="128">Nama Pengarang</td>
       <td width="7">:</td>
