@@ -168,8 +168,8 @@
 if($_POST[lanjut]){
 	if ($_POST[mataajar] and $_POST[kompetensi] and $_POST [subkomp] and $_POST[pokokbahasan] and $_POST[subpokok]){
 	?>
-	<script>alert("Data Berhasil Terupdate")
-	window.location="kompetensi.php";
+	<script>alert("Form Berhasil Disimpan")
+	window.location="input-kompetensi.php";
 	</script>
 	<?php
 	}
