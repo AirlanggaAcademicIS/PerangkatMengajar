@@ -31,6 +31,7 @@
         <td>:</td>
         <td><label>
           <select name="select4">
+            <option>Ceramah</option>
           </select>
         </label></td>
       </tr>
@@ -39,6 +40,7 @@
         <td>:</td>
         <td><label>
           <select name="select5">
+            <option>Proyektor</option>
           </select>
         </label></td>
       </tr>
@@ -47,6 +49,7 @@
         <td>:</td>
         <td><label>
           <select name="select6">
+            <option>50 menit</option>
           </select>
         </label></td>
       </tr>
