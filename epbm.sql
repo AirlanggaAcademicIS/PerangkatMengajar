@@ -1,252 +1,444 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     5/5/2016 9:34:20 AM                          */
-/*==============================================================*/
+-- phpMyAdmin SQL Dump
+-- version 4.4.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 08 Mei 2016 pada 08.03
+-- Versi Server: 5.6.26
+-- PHP Version: 5.6.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
-drop table if exists BACAAN;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-drop table if exists DAFTAR_METODE;
+--
+-- Database: `epbm`
+--
 
-drop table if exists DAFTAR_SS;
+-- --------------------------------------------------------
 
-drop table if exists DOSEN;
+--
+-- Struktur dari tabel `bacaan`
+--
 
-drop table if exists FAKULTAS;
+CREATE TABLE IF NOT EXISTS `bacaan` (
+  `KODE_BACAAN` varchar(10) NOT NULL,
+  `KODE_MK` varchar(10) DEFAULT NULL,
+  `JUDUL` varchar(50) NOT NULL,
+  `TAHUN` int(11) NOT NULL,
+  `NAMA_PENULIS` varchar(50) NOT NULL,
+  `NAMA_PENERBIT` varchar(25) NOT NULL,
+  `KOTA_PENERBIT` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists KOMPETENSI_KHUSUS;
+-- --------------------------------------------------------
 
-drop table if exists MATA_KULIAH;
+--
+-- Struktur dari tabel `daftar_media`
+--
 
-drop table if exists MEDIA;
+CREATE TABLE IF NOT EXISTS `daftar_media` (
+  `KODE_MEDIA` varchar(10) NOT NULL,
+  `KODE_KK` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists MEMILIKI_7;
+-- --------------------------------------------------------
 
-drop table if exists MENGAJAR;
+--
+-- Struktur dari tabel `daftar_metode`
+--
 
-drop table if exists METODE;
+CREATE TABLE IF NOT EXISTS `daftar_metode` (
+  `KODE_METODE` varchar(10) NOT NULL,
+  `KODE_KK` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists PRASYARAT;
+-- --------------------------------------------------------
 
-drop table if exists PROGRAM_STUDI;
+--
+-- Struktur dari tabel `daftar_ss`
+--
 
-drop table if exists SOFTSKILL;
+CREATE TABLE IF NOT EXISTS `daftar_ss` (
+  `KODE_SS` varchar(10) NOT NULL,
+  `KODE_MK` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-drop table if exists SUB_BAHASAN;
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table: BACAAN                                                */
-/*==============================================================*/
-create table BACAAN
-(
-   KODE_BACAAN          varchar(10) not null,
-   KODE_MK              varchar(10),
-   JUDUL                varchar(50) not null,
-   TAHUN                int not null,
-   NAMA_PENULIS         varchar(50) not null,
-   NAMA_PENERBIT        varchar(25) not null,
-   KOTA_PENERBIT        varchar(15) not null,
-   primary key (KODE_BACAAN)
-);
+--
+-- Struktur dari tabel `dosen`
+--
 
-/*==============================================================*/
-/* Table: DAFTAR_METODE                                         */
-/*==============================================================*/
-create table DAFTAR_METODE
-(
-   KODE_METODE          varchar(10) not null,
-   KODE_KK              varchar(10) not null,
-   primary key (KODE_METODE, KODE_KK)
-);
+CREATE TABLE IF NOT EXISTS `dosen` (
+  `NIP` varchar(20) NOT NULL,
+  `NAMA` varchar(50) NOT NULL,
+  `PASSWORD` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: DAFTAR_SS                                             */
-/*==============================================================*/
-create table DAFTAR_SS
-(
-   KODE_SS              varchar(10) not null,
-   KODE_MK              varchar(10) not null,
-   primary key (KODE_SS, KODE_MK)
-);
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table: DOSEN                                                 */
-/*==============================================================*/
-create table DOSEN
-(
-   NIP                  varchar(20) not null,
-   NAMA                 varchar(50) not null,
-   PASSWORD             varchar(12) not null,
-   primary key (NIP)
-);
+--
+-- Struktur dari tabel `fakultas`
+--
 
-/*==============================================================*/
-/* Table: FAKULTAS                                              */
-/*==============================================================*/
-create table FAKULTAS
-(
-   ID_FAK               varchar(10) not null,
-   NAMA_FAK             varchar(45) not null,
-   primary key (ID_FAK)
-);
+CREATE TABLE IF NOT EXISTS `fakultas` (
+  `ID_FAK` varchar(10) NOT NULL,
+  `NAMA_FAK` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: KOMPETENSI_KHUSUS                                     */
-/*==============================================================*/
-create table KOMPETENSI_KHUSUS
-(
-   KODE_KK              varchar(10) not null,
-   KODE_MK              varchar(10) not null,
-   NAMA_KK              varchar(35) not null,
-   NAMA_PB              varchar(35) not null,
-   WAKTU                varchar(4) not null,
-   primary key (KODE_KK)
-);
+--
+-- Dumping data untuk tabel `fakultas`
+--
 
-/*==============================================================*/
-/* Table: MATA_KULIAH                                           */
-/*==============================================================*/
-create table MATA_KULIAH
-(
-   KODE_MK              varchar(10) not null,
-   NIP                  varchar(20) not null,
-   KODE_PRODI           varchar(10) not null,
-   NAMA_MK              varchar(50) not null,
-   BEBAN_STUDI          int not null,
-   SEMESTER             int not null,
-   KOMPETENSI           text,
-   DESKRIPSI            text,
-   HARI                 text,
-   primary key (KODE_MK)
-);
+INSERT INTO `fakultas` (`ID_FAK`, `NAMA_FAK`) VALUES
+('FEB', 'Fakultas Ekonomi dan Bisnis'),
+('FF', 'Fakultas Farmasi'),
+('FH', 'Fakultas Hukum'),
+('FIB', 'Fakultas Ilmu Budaya'),
+('FISIP', 'Fakultas Ilmu Sosial dan Ilmu Politik'),
+('FK', 'Fakultas Kedokteran'),
+('FKG', 'Fakultas Kedokteran Gigi'),
+('FKH', 'Fakultas Kedokteran Hewan'),
+('FKM', 'Fakultas Kesehatan Masyarakat'),
+('FKP', 'Fakultas Keperawatan'),
+('FPK', 'Fakultas Perikanan dan Kelautan'),
+('FPsi', 'Fakultas Psikologi'),
+('FST', 'Fakultas Sains dan Teknologi'),
+('FVok', 'Fakultas Vokasi');
 
-/*==============================================================*/
-/* Table: MEDIA                                                 */
-/*==============================================================*/
-create table MEDIA
-(
-   KODE_MEDIA           varchar(10) not null,
-   NAMA_MEDIA           varchar(35),
-   primary key (KODE_MEDIA)
-);
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table: MEMILIKI_7                                            */
-/*==============================================================*/
-create table MEMILIKI_7
-(
-   KODE_MEDIA           varchar(10) not null,
-   KODE_KK              varchar(10) not null,
-   primary key (KODE_MEDIA, KODE_KK)
-);
+--
+-- Struktur dari tabel `kompetensi_khusus`
+--
 
-/*==============================================================*/
-/* Table: MENGAJAR                                              */
-/*==============================================================*/
-create table MENGAJAR
-(
-   NIP                  varchar(20) not null,
-   KODE_MK              varchar(10) not null,
-   primary key (NIP, KODE_MK)
-);
+CREATE TABLE IF NOT EXISTS `kompetensi_khusus` (
+  `KODE_KK` varchar(10) NOT NULL,
+  `KODE_MK` varchar(10) NOT NULL,
+  `NAMA_KK` varchar(35) NOT NULL,
+  `NAMA_PB` varchar(35) NOT NULL,
+  `WAKTU` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: METODE                                                */
-/*==============================================================*/
-create table METODE
-(
-   KODE_METODE          varchar(10) not null,
-   NAMA_METODE          varchar(35),
-   primary key (KODE_METODE)
-);
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table: PRASYARAT                                             */
-/*==============================================================*/
-create table PRASYARAT
-(
-   KODE_MK              varchar(10) not null,
-   MAT_KODE_MK          varchar(10) not null,
-   primary key (KODE_MK, MAT_KODE_MK)
-);
+--
+-- Struktur dari tabel `mata_kuliah`
+--
 
-/*==============================================================*/
-/* Table: PROGRAM_STUDI                                         */
-/*==============================================================*/
-create table PROGRAM_STUDI
-(
-   KODE_PRODI           varchar(10) not null,
-   ID_FAK               varchar(10) not null,
-   NAMA_PRODI           varchar(30) not null,
-   primary key (KODE_PRODI)
-);
+CREATE TABLE IF NOT EXISTS `mata_kuliah` (
+  `KODE_MK` varchar(10) NOT NULL,
+  `NIP` varchar(20) NOT NULL,
+  `KODE_PRODI` varchar(10) NOT NULL,
+  `NAMA_MK` varchar(50) NOT NULL,
+  `BEBAN_STUDI` int(11) NOT NULL,
+  `SEMESTER` int(11) NOT NULL,
+  `KOMPETENSI` text,
+  `DESKRIPSI` text,
+  `HARI` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*==============================================================*/
-/* Table: SOFTSKILL                                             */
-/*==============================================================*/
-create table SOFTSKILL
-(
-   KODE_SS              varchar(10) not null,
-   NAMA_SS              varchar(25) not null,
-   primary key (KODE_SS)
-);
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table: SUB_BAHASAN                                           */
-/*==============================================================*/
-create table SUB_BAHASAN
-(
-   KODE_SUB             varchar(10) not null,
-   KODE_KK              varchar(10) not null,
-   SUB_BAHASAN          varchar(50) not null,
-   primary key (KODE_SUB)
-);
+--
+-- Struktur dari tabel `media`
+--
 
-alter table BACAAN add constraint FK_MEMILIKI_3 foreign key (KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+CREATE TABLE IF NOT EXISTS `media` (
+  `KODE_MEDIA` varchar(10) NOT NULL,
+  `NAMA_MEDIA` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-alter table DAFTAR_METODE add constraint FK_DAFTAR_METODE foreign key (KODE_METODE)
-      references METODE (KODE_METODE) on delete restrict on update restrict;
+--
+-- Dumping data untuk tabel `media`
+--
 
-alter table DAFTAR_METODE add constraint FK_DAFTAR_METODE2 foreign key (KODE_KK)
-      references KOMPETENSI_KHUSUS (KODE_KK) on delete restrict on update restrict;
+INSERT INTO `media` (`KODE_MEDIA`, `NAMA_MEDIA`) VALUES
+('MDA1', 'Proyektor'),
+('MDA2', 'Papan Tulis'),
+('MDA3', 'Bahan Ajar');
 
-alter table DAFTAR_SS add constraint FK_DAFTAR_SS foreign key (KODE_SS)
-      references SOFTSKILL (KODE_SS) on delete restrict on update restrict;
+-- --------------------------------------------------------
 
-alter table DAFTAR_SS add constraint FK_DAFTAR_SS2 foreign key (KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+--
+-- Struktur dari tabel `mengajar`
+--
 
-alter table KOMPETENSI_KHUSUS add constraint FK_MEMILIKI_4 foreign key (KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+CREATE TABLE IF NOT EXISTS `mengajar` (
+  `NIP` varchar(20) NOT NULL,
+  `KODE_MK` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-alter table MATA_KULIAH add constraint FK_MEMILIKI_2 foreign key (KODE_PRODI)
-      references PROGRAM_STUDI (KODE_PRODI) on delete restrict on update restrict;
+-- --------------------------------------------------------
 
-alter table MATA_KULIAH add constraint FK_PENANGGUNG_JAWAB foreign key (NIP)
-      references DOSEN (NIP) on delete restrict on update restrict;
+--
+-- Struktur dari tabel `metode`
+--
 
-alter table MEMILIKI_7 add constraint FK_MEMILIKI_7 foreign key (KODE_MEDIA)
-      references MEDIA (KODE_MEDIA) on delete restrict on update restrict;
+CREATE TABLE IF NOT EXISTS `metode` (
+  `KODE_METODE` varchar(10) NOT NULL,
+  `NAMA_METODE` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-alter table MEMILIKI_7 add constraint FK_MEMILIKI_8 foreign key (KODE_KK)
-      references KOMPETENSI_KHUSUS (KODE_KK) on delete restrict on update restrict;
+--
+-- Dumping data untuk tabel `metode`
+--
 
-alter table MENGAJAR add constraint FK_MENGAJAR foreign key (NIP)
-      references DOSEN (NIP) on delete restrict on update restrict;
+INSERT INTO `metode` (`KODE_METODE`, `NAMA_METODE`) VALUES
+('MTD1', 'Ceramah'),
+('MTD2', 'Tanya Jawab'),
+('MTD3', 'Presentasi');
 
-alter table MENGAJAR add constraint FK_MENGAJAR2 foreign key (KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+-- --------------------------------------------------------
 
-alter table PRASYARAT add constraint FK_PRASYARAT foreign key (KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+--
+-- Struktur dari tabel `prasyarat`
+--
 
-alter table PRASYARAT add constraint FK_PRASYARAT2 foreign key (MAT_KODE_MK)
-      references MATA_KULIAH (KODE_MK) on delete restrict on update restrict;
+CREATE TABLE IF NOT EXISTS `prasyarat` (
+  `KODE_MK` varchar(10) NOT NULL,
+  `MAT_KODE_MK` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-alter table PROGRAM_STUDI add constraint FK_MEMILIKI_1 foreign key (ID_FAK)
-      references FAKULTAS (ID_FAK) on delete restrict on update restrict;
+-- --------------------------------------------------------
 
-alter table SUB_BAHASAN add constraint FK_MEMILIKI_5 foreign key (KODE_KK)
-      references KOMPETENSI_KHUSUS (KODE_KK) on delete restrict on update restrict;
+--
+-- Struktur dari tabel `program_studi`
+--
 
+CREATE TABLE IF NOT EXISTS `program_studi` (
+  `KODE_PRODI` varchar(10) NOT NULL,
+  `ID_FAK` varchar(10) NOT NULL,
+  `NAMA_PRODI` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `program_studi`
+--
+
+INSERT INTO `program_studi` (`KODE_PRODI`, `ID_FAK`, `NAMA_PRODI`) VALUES
+('S1BIO', 'FST', 'S1 Biologi'),
+('S1FIS', 'FST', 'S1 Fisika'),
+('S1ITL', 'FST', 'S1 Ilmu dan Teknologi Lingkungan'),
+('S1KIM', 'FST', 'S1 Kimia'),
+('S1MAT', 'FST', 'S1 Matematika'),
+('S1SI', 'FST', 'S1 Sistem Informasi'),
+('S1STAT', 'FST', 'S1 Statistika'),
+('S1TB', 'FST', 'S1 Tekno Biomedik');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `softskill`
+--
+
+CREATE TABLE IF NOT EXISTS `softskill` (
+  `KODE_SS` varchar(10) NOT NULL,
+  `NAMA_SS` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `softskill`
+--
+
+INSERT INTO `softskill` (`KODE_SS`, `NAMA_SS`) VALUES
+('SS1', 'Kejujuran'),
+('SS2', 'Kedisiplinan'),
+('SS3', 'Keaktifan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sub_bahasan`
+--
+
+CREATE TABLE IF NOT EXISTS `sub_bahasan` (
+  `KODE_SUB` varchar(10) NOT NULL,
+  `KODE_KK` varchar(10) NOT NULL,
+  `SUB_BAHASAN` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bacaan`
+--
+ALTER TABLE `bacaan`
+  ADD PRIMARY KEY (`KODE_BACAAN`),
+  ADD KEY `FK_MEMILIKI_3` (`KODE_MK`);
+
+--
+-- Indexes for table `daftar_media`
+--
+ALTER TABLE `daftar_media`
+  ADD PRIMARY KEY (`KODE_MEDIA`,`KODE_KK`),
+  ADD KEY `FK_DAFTAR_MEDIA2` (`KODE_KK`);
+
+--
+-- Indexes for table `daftar_metode`
+--
+ALTER TABLE `daftar_metode`
+  ADD PRIMARY KEY (`KODE_METODE`,`KODE_KK`),
+  ADD KEY `FK_DAFTAR_METODE2` (`KODE_KK`);
+
+--
+-- Indexes for table `daftar_ss`
+--
+ALTER TABLE `daftar_ss`
+  ADD PRIMARY KEY (`KODE_SS`,`KODE_MK`),
+  ADD KEY `FK_DAFTAR_SS2` (`KODE_MK`);
+
+--
+-- Indexes for table `dosen`
+--
+ALTER TABLE `dosen`
+  ADD PRIMARY KEY (`NIP`);
+
+--
+-- Indexes for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  ADD PRIMARY KEY (`ID_FAK`);
+
+--
+-- Indexes for table `kompetensi_khusus`
+--
+ALTER TABLE `kompetensi_khusus`
+  ADD PRIMARY KEY (`KODE_KK`),
+  ADD KEY `FK_MEMILIKI_4` (`KODE_MK`);
+
+--
+-- Indexes for table `mata_kuliah`
+--
+ALTER TABLE `mata_kuliah`
+  ADD PRIMARY KEY (`KODE_MK`),
+  ADD KEY `FK_MEMILIKI_2` (`KODE_PRODI`),
+  ADD KEY `FK_PENANGGUNG_JAWAB` (`NIP`);
+
+--
+-- Indexes for table `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`KODE_MEDIA`);
+
+--
+-- Indexes for table `mengajar`
+--
+ALTER TABLE `mengajar`
+  ADD PRIMARY KEY (`NIP`,`KODE_MK`),
+  ADD KEY `FK_MENGAJAR2` (`KODE_MK`);
+
+--
+-- Indexes for table `metode`
+--
+ALTER TABLE `metode`
+  ADD PRIMARY KEY (`KODE_METODE`);
+
+--
+-- Indexes for table `prasyarat`
+--
+ALTER TABLE `prasyarat`
+  ADD PRIMARY KEY (`KODE_MK`,`MAT_KODE_MK`),
+  ADD KEY `FK_PRASYARAT2` (`MAT_KODE_MK`);
+
+--
+-- Indexes for table `program_studi`
+--
+ALTER TABLE `program_studi`
+  ADD PRIMARY KEY (`KODE_PRODI`),
+  ADD KEY `FK_MEMILIKI_1` (`ID_FAK`);
+
+--
+-- Indexes for table `softskill`
+--
+ALTER TABLE `softskill`
+  ADD PRIMARY KEY (`KODE_SS`);
+
+--
+-- Indexes for table `sub_bahasan`
+--
+ALTER TABLE `sub_bahasan`
+  ADD PRIMARY KEY (`KODE_SUB`),
+  ADD KEY `FK_MEMILIKI_5` (`KODE_KK`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `bacaan`
+--
+ALTER TABLE `bacaan`
+  ADD CONSTRAINT `FK_MEMILIKI_3` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
+
+--
+-- Ketidakleluasaan untuk tabel `daftar_media`
+--
+ALTER TABLE `daftar_media`
+  ADD CONSTRAINT `FK_DAFTAR_MEDIA` FOREIGN KEY (`KODE_MEDIA`) REFERENCES `media` (`KODE_MEDIA`),
+  ADD CONSTRAINT `FK_DAFTAR_MEDIA2` FOREIGN KEY (`KODE_KK`) REFERENCES `kompetensi_khusus` (`KODE_KK`);
+
+--
+-- Ketidakleluasaan untuk tabel `daftar_metode`
+--
+ALTER TABLE `daftar_metode`
+  ADD CONSTRAINT `FK_DAFTAR_METODE` FOREIGN KEY (`KODE_METODE`) REFERENCES `metode` (`KODE_METODE`),
+  ADD CONSTRAINT `FK_DAFTAR_METODE2` FOREIGN KEY (`KODE_KK`) REFERENCES `kompetensi_khusus` (`KODE_KK`);
+
+--
+-- Ketidakleluasaan untuk tabel `daftar_ss`
+--
+ALTER TABLE `daftar_ss`
+  ADD CONSTRAINT `FK_DAFTAR_SS` FOREIGN KEY (`KODE_SS`) REFERENCES `softskill` (`KODE_SS`),
+  ADD CONSTRAINT `FK_DAFTAR_SS2` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
+
+--
+-- Ketidakleluasaan untuk tabel `kompetensi_khusus`
+--
+ALTER TABLE `kompetensi_khusus`
+  ADD CONSTRAINT `FK_MEMILIKI_4` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
+
+--
+-- Ketidakleluasaan untuk tabel `mata_kuliah`
+--
+ALTER TABLE `mata_kuliah`
+  ADD CONSTRAINT `FK_MEMILIKI_2` FOREIGN KEY (`KODE_PRODI`) REFERENCES `program_studi` (`KODE_PRODI`),
+  ADD CONSTRAINT `FK_PENANGGUNG_JAWAB` FOREIGN KEY (`NIP`) REFERENCES `dosen` (`NIP`);
+
+--
+-- Ketidakleluasaan untuk tabel `mengajar`
+--
+ALTER TABLE `mengajar`
+  ADD CONSTRAINT `FK_MENGAJAR` FOREIGN KEY (`NIP`) REFERENCES `dosen` (`NIP`),
+  ADD CONSTRAINT `FK_MENGAJAR2` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
+
+--
+-- Ketidakleluasaan untuk tabel `prasyarat`
+--
+ALTER TABLE `prasyarat`
+  ADD CONSTRAINT `FK_PRASYARAT` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`),
+  ADD CONSTRAINT `FK_PRASYARAT2` FOREIGN KEY (`MAT_KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
+
+--
+-- Ketidakleluasaan untuk tabel `program_studi`
+--
+ALTER TABLE `program_studi`
+  ADD CONSTRAINT `FK_MEMILIKI_1` FOREIGN KEY (`ID_FAK`) REFERENCES `fakultas` (`ID_FAK`);
+
+--
+-- Ketidakleluasaan untuk tabel `sub_bahasan`
+--
+ALTER TABLE `sub_bahasan`
+  ADD CONSTRAINT `FK_MEMILIKI_5` FOREIGN KEY (`KODE_KK`) REFERENCES `kompetensi_khusus` (`KODE_KK`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
