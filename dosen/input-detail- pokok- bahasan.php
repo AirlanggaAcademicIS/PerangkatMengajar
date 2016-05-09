@@ -30,9 +30,12 @@
         <td>Metode</td>
         <td>:</td>
         <td><label>
-          <select name="select4">
-            <option>Ceramah</option>
-          </select>
+        <select name="select4">
+          <option value="Ceramah">Ceramah</option>
+          <option value="Presentasi">Presentasi</option>
+		            <option value="Tanya Jawab">Tanya Jawab</option>
+
+        </select>
         </label></td>
       </tr>
       <tr>
@@ -40,7 +43,9 @@
         <td>:</td>
         <td><label>
           <select name="select5">
-            <option>Proyektor</option>
+            <option value="Proyektor">Proyektor</option>
+          <option value="White Board">White Board</option>
+		            <option value="Hand out">Hand out</option>
           </select>
         </label></td>
       </tr>
@@ -49,7 +54,11 @@
         <td>:</td>
         <td><label>
           <select name="select6">
-            <option>50 menit</option>
+            <option value="50 menit">50 menit</option>
+          <option value="100 menit">100 menit</option>
+		            <option value="150 menit">150 menit</option>
+					<option value="200 menit">200 menit</option>
+          <option value="250 menit">250 menit</option>
           </select>
         </label></td>
       </tr>
