@@ -1,6 +1,6 @@
 body {
     padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
-	background: url(Assets/img/Background.jpg);
+	background: url(file:///C|/Users/Sasono%20Hannarto/Documents/GitHub/PerangkatMengajar/e-pbm/Assets/img/Background.jpg);
 	background-size:auto;
 	background-position:inherit;
 	margin-top: 40px;
@@ -21,7 +21,6 @@ body {
 }
 
 .collapse.in{
-    
     background-color:#333 !important;
 }
 
