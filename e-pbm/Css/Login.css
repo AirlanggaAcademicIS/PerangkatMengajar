@@ -19,8 +19,9 @@ body {
 	padding-bottom: 5px;
 }
 
+
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
-	background-color:transparent;
+	background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover{
@@ -37,6 +38,12 @@ body {
 
 .navbar-fixed-top .navbar-brand {
     padding: 0 0px;
+}
+
+@media (max-width: 767px) {
+    .navbar-inverse {
+        background-color: black!important;
+    }
 }
 
 /*--------------------------------------------------*/
