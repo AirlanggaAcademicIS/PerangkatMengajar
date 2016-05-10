@@ -2,31 +2,34 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>E-PBM</title>
 
     <link href="Css/bootstrap.min.css" rel="stylesheet">
     <link href="Css/Login.css" rel="stylesheet">
-
-
 </head>
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand"><img src="Assets/LogoEpbm.png" alt=""></a>
             </div>
-            	<div id="navbar">
+            	<div id="navbar" class="navbar-collapse collapse">
             		<ul class="nav navbar-nav">
-						<li class="active"><a href="NavbarDosen.html">Home</a></li>
-						<li class="active"><a href="#">PBM</a></li>
+						<li><a href="NavbarDosen.html">Home</a></li>
+						<li class="active"><a href="PBMDosen.html">PBM</a></li>
             			<li class="dropdown">
             				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Form<span class="caret"></span>
@@ -38,17 +41,17 @@
                               </ul>
                         </li>
           			</ul>
-         <ul class="nav navbar-nav navbar-right">
-         <div id="navbar">
-            <ul class="nav navbar-nav">
-            	<li><a href="#"> Logout</a></li>
-     		</ul>
-		</div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <div id="navbar">
+                            <ul class="nav navbar-nav"><li><a href="#"> Logout</a></li></ul>
+                        </div>
+                    </ul>
+		      </div>
         </div>
     </nav>
     
 
-<div class="container" id="startchange">
+    <div class="container" id="startchange">
 		<div class="stepwizard">
     		<div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
@@ -78,105 +81,102 @@
     		</div>
 		</div>
         
+<!-- Rahman------------------------------------------------------------->       
         <form role="form">
             <div class="row setup-content" id="step-1">
-            
                 <div class="col-xs-12">
                     <div class="col-md-12">
                         <h3> Service Details</h3>
-                                <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="stack_id">Select Stack</label>
-          <div class="col-md-5">
-            <select id="stack_id" name="stack_id" class="form-control">
-              <option value="1">Open Source</option>
-              <option value="2">IBM</option>
-              <option value="3">Microsoft</option>
-              <option value="4">Other Services</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="stack_id">Select Stack</label>
+                            <div class="col-md-5">
+                                <select id="stack_id" name="stack_id" class="form-control">
+                                  <option value="1">Open Source</option>
+                                  <option value="2">IBM</option>
+                                  <option value="3">Microsoft</option>
+                                  <option value="4">Other Services</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="service_name">Service Name</label>  
+                            <div class="col-md-5">
+                                <input id="service_name" name="service_name" type="text" placeholder="" class="form-control input-md">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="service_architecture">Service Architecture</label>  
+                            <div class="col-md-5">
+                                <input id="service_architecture" name="service_architecture" type="text" placeholder="" class="form-control input-md">
+                          </div>
+                        </div>
+                        <br>
+                        <br>
                         <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="service_name">Service Name</label>  
-          <div class="col-md-5">
-          <input id="service_name" name="service_name" type="text" placeholder="" class="form-control input-md">
-            
-          </div>
-        </div>
-        <br>
-        <br>
-        <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="service_architecture">Service Architecture</label>  
-          <div class="col-md-5">
-          <input id="service_architecture" name="service_architecture" type="text" placeholder="" class="form-control input-md">
-            
-          </div>
-        </div>
-        <br>
-        <br>
-        <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="service_version">Service Version</label>  
-          <div class="col-md-5">
-          <input id="service_version" name="service_version" type="text" placeholder="" class="form-control input-md">
-            
-          </div>
-        </div>
-        <br>
-        <br>
-        <!-- Textarea -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="service_description">Service Description</label>
-          <div class="col-md-4">                     
-            <textarea class="form-control" id="service_description" name="service_description"></textarea>
-          </div>
-        </div>
-        <br>
-        <br>
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="os_id">Operating System</label>
-          <div class="col-md-5">
-            <select id="os_id" name="os_id" class="form-control">
-              <option value="1">Ubuntu</option>
-              <option value="2">RHEL</option>
-              <option value="3">Windows</option>
-            </select>
-          </div>
-        </div>
-        <br><br>
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="sl_id">Software License</label>
-          <div class="col-md-5">
-            <select id="sl_id" name="sl_id" class="form-control">
-              <option value="1">Licence 1</option>
-              <option value="2">Licence 2</option>
-              <option value="3">Licence 3</option>
-            </select>
-          </div>
-        </div>
-        <br><br>
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="sc_id">Service Category</label>
-          <div class="col-md-5">
-            <select id="sc_id" name="sc_id" class="form-control">
-              <option value="1">Category 1</option>
-              <option value="2">Category 2</option>
-              <option value="3">Category 3</option>
-	            </select>
-          </div>
-        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="service_version">Service Version</label>  
+                          <div class="col-md-5">
+                          <input id="service_version" name="service_version" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="service_description">Service Description</label>
+                          <div class="col-md-4">                     
+                            <textarea class="form-control" id="service_description" name="service_description"></textarea>
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="os_id">Operating System</label>
+                          <div class="col-md-5">
+                            <select id="os_id" name="os_id" class="form-control">
+                              <option value="1">Ubuntu</option>
+                              <option value="2">RHEL</option>
+                              <option value="3">Windows</option>
+                            </select>
+                          </div>
+                        </div>
+                        <br><br>
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="sl_id">Software License</label>
+                          <div class="col-md-5">
+                            <select id="sl_id" name="sl_id" class="form-control">
+                              <option value="1">Licence 1</option>
+                              <option value="2">Licence 2</option>
+                              <option value="3">Licence 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <br><br>
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="sc_id">Service Category</label>
+                          <div class="col-md-5">
+                            <select id="sc_id" name="sc_id" class="form-control">
+                              <option value="1">Category 1</option>
+                              <option value="2">Category 2</option>
+                              <option value="3">Category 3</option>
+                                </select>
+                          </div>
+                        </div>
                         <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-                    </div>
                 </div>
             </div>
+        </div>
+
+<!--Lyli & Kinan------------------------------------------------------------------------------------->
             <div class="row setup-content" id="step-2">
                 <div class="col-xs-12">
                     <div class="col-md-12">
@@ -215,7 +215,8 @@
                     </div>
                 </div>
             </div>
-<!-- rizal-------------------------------------------------------------------------------------->            
+            
+<!-- Rizal-------------------------------------------------------------------------------------->            
     <div class="row setup-content" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12">
@@ -286,14 +287,12 @@
                     </div>
                 </div>
                 
-                
-                
                 <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
             </div>
         </div>
     </div>
         
-<!-------------------------------------------------------------------------------------- -->    
+<!-- Ana Yushinta------------------------------------------------------------------------------------ -->    
 	<div class="row setup-content" id="step-4">
                 <div class="col-xs-12">
                     <div class="col-md-12" >
@@ -326,8 +325,6 @@
              <div id="action_jsondisplay"></div>
           </div>
         </div>
-<!---------------------- -->
-
         </div>
         </div>
         <!-- Button -->
