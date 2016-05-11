@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Mei 2016 pada 08.03
+-- Generation Time: 11 Mei 2016 pada 12.35
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -27,14 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `bacaan` (
-  `KODE_BACAAN` varchar(10) NOT NULL,
+  `KODE_BACAAN` int(11) NOT NULL,
   `KODE_MK` varchar(10) DEFAULT NULL,
   `JUDUL` varchar(50) NOT NULL,
   `TAHUN` int(11) NOT NULL,
   `NAMA_PENULIS` varchar(50) NOT NULL,
   `NAMA_PENERBIT` varchar(25) NOT NULL,
   `KOTA_PENERBIT` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -369,6 +369,15 @@ ALTER TABLE `sub_bahasan`
   ADD PRIMARY KEY (`KODE_SUB`),
   ADD KEY `FK_MEMILIKI_5` (`KODE_KK`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bacaan`
+--
+ALTER TABLE `bacaan`
+  MODIFY `KODE_BACAAN` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
