@@ -1,4 +1,4 @@
-<?php include ("koneksi.php");?>
+<?php include ("DBconnect.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,10 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/Login.css" rel="stylesheet">
+	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="datepicker/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.min.css" />
+<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 </head>
 
 <body>
@@ -225,7 +229,7 @@ if($_POST[lanjut]){
 	if ($_POST[mataajar] and $_POST[kompetensi] and $_POST [subkomp] and $_POST[pokokbahasan] and $_POST[subpokok]){
 	?>
 	<script>alert("Form Berhasil Disimpan")
-	window.location="kompetensi.php";
+	window.location="input-kompetensi.php";
 	</script>
 	<?php
 	}

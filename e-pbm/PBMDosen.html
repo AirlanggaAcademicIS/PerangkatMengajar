@@ -178,42 +178,99 @@
 
 <!--Lyli & Kinan------------------------------------------------------------------------------------->
             <div class="row setup-content" id="step-2">
-                <div class="col-xs-12">
-                    <div class="col-md-12">
-                        <h3> Service Enpoint Details</h3>
-                       <!-- File Button --> 
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="sep_json">SEP JSON File</label>
-          <div class="col-md-4">
-                    <input type="file" id="sep_json" name="sep_json" class="input-file" accept=".txt,.json">
-             <div id="sep_jsondisplay"></div>
-          </div>
-        </div>
-        <br><br>
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="possible_instances">Possible Instances</label>
-          <div class="col-md-5">
-            <select id="possible_instances" name="possible_instances" class="form-control">
-              <option value="0">0</option>
-              <option value="-1">Infinite</option>
-              <option value=">0">1 or more</option>
-            </select>
-          </div>
-        </div>
-        <br><br>
-        <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="doc_url">Documentation File Location</label>  
-          <div class="col-md-5">
-          <input id="doc_url" name="doc_url" type="text" placeholder="docs/filename.html" class="form-control input-md">
+              <div class="col-xs-12">
+			  <div class="col-md-12">
+                        <h3>Kompetensi</h3>
+						<div class="form-group">
+                  <table width="598" border="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td> 
+    </tr>
+    <tr>
+      <td><strong>Mata ajar </strong></td>
+      <td>:</td>
+      <td><input name="mataajar" type="text" oninvalid="this.setCustomValidity('Mata ajar harus diisi')" oninput="setCustomValidity('')" required/></td>
+    </tr>
+    <tr>
+      <td><strong>Kompetensi</strong></td>
+      <td>:</td>
+      <td><textarea name="kompetensi" cols="50" oninvalid="this.setCustomValidity('kompetensi harus diisi')" oninput="setCustomValidity('')" required="required"></textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+	  
+      <td><strong>Kompetensi Khusus </strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><p>
+        <input type="text" name="subkomp" id="subkomp" />
+        <input type="submit" name="plus_subkomp" id="plus_subkomp" value="+" />
+      </p>        </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><textarea name="list_subkomp" id="list_subkomp" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;" readonly></textarea>
+	  </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><strong>Pokok Bahasan </strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="pokokbahasan" />
+      <input type="submit" name="plus_pokokbahasan" id="plus_pokokbahasan" value="+" />
+	  <div class="form-group">
+          <label class="col-md-4 control-label" for="sep_json"> Upload Materi</label>
+          
+       <input type="file" id="upload_materi" name="upload_materi" class="input-file" accept=".txt,.docx,.pdf" placeholder="Upload Materi">
             
-          </div>
         </div>
-        
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-                    </div>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><textarea name="list_pokokbahasan" readonly="readonly" id="list_subkomp" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;"></textarea>
+	 	</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><strong>Sub Pokok Bahasan </strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="subpokok" id="subpokok"/>
+      <input type="submit" name="plus_subpokok" value="+" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><textarea name="list_subpokok" readonly="readonly" id="list_subpokok" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;"></textarea>
+	  	</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    
+  </table>
+   <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                 </div>
+                <p></p>
+                </div>
+              </div>
             </div>
             
 <!-- Rizal-------------------------------------------------------------------------------------->            
