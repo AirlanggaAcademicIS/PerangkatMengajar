@@ -44,17 +44,15 @@
 <!------------------------------------------------------------------------------ End of navbar-->
 <!------------------------------------------------------------------------------ Login-->
 	<div class="container">
-     	<form class="form-signin">
+     	<form class="form-signin" action="back-end/Login.php">
 			<h1 class="form-signin-heading"> Masukkan
             <h2> NIP & Password </h2>
         	</h1>
-      		<label for="inputNIP" class="sr-only">NIP</label>
-        	<input type="text" id="inputNIP" class="form-control" placeholder="NIP" required autofocus>
-        	<label for="inputPassword" class="sr-only">Password</label>
-        	<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      	</form>
-      	<form class="signinButton">  
-        	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      		<label for="NIP" class="sr-only">NIP</label>
+        	<input type="text" name="NIP" class="form-control" placeholder="NIP" required autofocus>
+        	<label for="Pass" class="sr-only">Password</label>
+        	<input type="password" name="Pass" class="form-control" placeholder="Password" required>
+            <input type="submit" name="Login" value="Login">
       	</form>
 	</div> 
 <!----------------------------------------------------------------------------- End of login-->
