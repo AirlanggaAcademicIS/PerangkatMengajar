@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $pass="";
-$database="epbm1";
+$database="epbm";
 $fail=false;
 
 mysql_connect($host,$user,$pass) or die (

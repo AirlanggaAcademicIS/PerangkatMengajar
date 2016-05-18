@@ -27,7 +27,7 @@
       <td>:</td>
       <td><label for="textfield2"></label>
      
-      <input name="tahunterbit" type="text" placeholder="Tahun Terbit" size="50" oninvalid="this.setCustomValidity('Isikan Tahun Terbit')" oninput="setCustomValidity('')" required/>
+      <input name="tahunterbit" type="number" placeholder="Tahun Terbit" size="50" oninvalid="this.setCustomValidity('Isikan Tahun Terbit')" oninput="setCustomValidity('')" required/>
       
       </td>
     </tr>
