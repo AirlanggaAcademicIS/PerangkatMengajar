@@ -154,7 +154,14 @@
 					}
 				});
 			});
-		</script>		</td>
+		</script>
+		<?php
+	if(isset($_POST['plus_subkomp'])){
+	$query="insert into kompetensi_khusus values
+	('$_POST[]','$_POST[]','$_POST[NAMA_KK]')";
+	mysql_query($query);
+	}
+	?>		</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -183,7 +190,12 @@
 					}
 				});
 			});
-		</script>		</td>
+		</script>
+		<?php
+	if(isset($_POST['plus_pokokbahasan'])){
+	$query="insert into kompetensi_khusus values('$_POST[NAMA_PB]')";
+	mysql_query($query);}
+	?>		</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -211,7 +223,12 @@
 					}
 				});
 			});
-		</script>		</td>
+		</script>	
+		<?php
+	if(isset($_POST['plus_subpokok'])){
+	$query="insert into sub_bahasan values ('$_POST[SUB_BAHASAN]')";
+	mysql_query($query);}
+	?>		</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -229,7 +246,7 @@ if($_POST[lanjut]){
 	if ($_POST[mataajar] and $_POST[kompetensi] and $_POST [subkomp] and $_POST[pokokbahasan] and $_POST[subpokok]){
 	?>
 	<script>alert("Form Berhasil Disimpan")
-	window.location="input-kompetensi.php";
+	window.location="FormKompetensi.php";
 	</script>
 	<?php
 	}
