@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <p2>
-<form id="form1" name="form1" method="post" action="" onSubmit="return validator()">
+<form id="form1" name="form1" method="post" action="Kompetensi.php" onSubmit="return validator()">
   <table width="598" border="0">
     <tr>
       <td>&nbsp;</td>
@@ -118,7 +118,7 @@
     <tr>
       <td>Mata ajar </td>
       <td>:</td>
-      <td><input name="mataajar" type="text" value="Pengembangan SI" oninvalid="this.setCustomValidity('Mata ajar harus diisi')" oninput="setCustomValidity('')" required/></td>
+      <td><input name="mataajar" type="text"  oninvalid="this.setCustomValidity('Mata ajar harus diisi')" oninput="setCustomValidity('')" required/></td>
     </tr>
     <tr>
       <td>Kompetensi</td>
@@ -135,14 +135,15 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><p>
-        <input type="text" name="subkomp" id="subkomp" />
-        <input type="submit" name="plus_subkomp" id="plus_subkomp" value="+" />
+        <input type="text" name="subkomp" placeholder="Sub Kompetensi" size="50" oninvalid="this.setCustomValidity('Isikan Subkompetensi')" oninput="setCustomValidity('')" required/>
+       
       </p>        </td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><textarea name="list_subkomp" id="list_subkomp" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;" readonly></textarea>
+	   <input type="submit" name="plus_subkomp" id="plus_subkomp" value="+" />
 	  <script>
 			var x=1;
 			$(document).ready(function(){
@@ -155,13 +156,7 @@
 				});
 			});
 		</script>
-		<?php
-	if(isset($_POST['plus_subkomp'])){
-	$query="insert into kompetensi_khusus values
-	('$_POST[]','$_POST[]','$_POST[NAMA_KK]')";
-	mysql_query($query);
-	}
-	?>		</td>
+		</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -171,7 +166,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><input type="text" name="pokokbahasan" />
+      <td><input type="text" name="pokokbahasan" placeholder="Pokok bahasan" size="50" oninvalid="this.setCustomValidity('Isikan Pokok bahasan')" oninput="setCustomValidity('')" required/>
       <input type="submit" name="plus_pokokbahasan" id="plus_pokokbahasan" value="+" />
       <input type="submit" name="Submit4" value="upload materi" /></td>
     </tr>
@@ -195,7 +190,8 @@
 	if(isset($_POST['plus_pokokbahasan'])){
 	$query="insert into kompetensi_khusus values('$_POST[NAMA_PB]')";
 	mysql_query($query);}
-	?>		</td>
+	?>		
+	</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -205,7 +201,7 @@
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><input type="text" name="subpokok" id="subpokok"/>
+      <td><input type="text" name="subpokok" placeholder="Sub Pokok Bahasan" size="50" oninvalid="this.setCustomValidity('Isikan Sub Pokok Bahasan')" oninput="setCustomValidity('')" required/>
       <input type="submit" name="plus_subpokok" value="+" /></td>
     </tr>
     <tr>
@@ -241,22 +237,7 @@
       <td><input type="submit" name="kembali" value="back" />
       <input type="submit" name="lanjut" value="next" /></td>
     </tr>
-	  <?php
-if($_POST[lanjut]){
-	if ($_POST[mataajar] and $_POST[kompetensi] and $_POST [subkomp] and $_POST[pokokbahasan] and $_POST[subpokok]){
-	?>
-	<script>alert("Form Berhasil Disimpan")
-	window.location="FormKompetensi.php";
-	</script>
-	<?php
-	}
-	else
-	?>
-	<script>alert("form belum lengkap")
-	</script>
-	<?php
-}
-?>
+	  
   </table>
 
 </form>
