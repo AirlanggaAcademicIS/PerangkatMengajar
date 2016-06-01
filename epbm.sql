@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11 Mei 2016 pada 12.35
+-- Generation Time: 01 Jun 2016 pada 13.15
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -34,28 +34,6 @@ CREATE TABLE IF NOT EXISTS `bacaan` (
   `NAMA_PENULIS` varchar(50) NOT NULL,
   `NAMA_PENERBIT` varchar(25) NOT NULL,
   `KOTA_PENERBIT` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `daftar_media`
---
-
-CREATE TABLE IF NOT EXISTS `daftar_media` (
-  `KODE_MEDIA` varchar(10) NOT NULL,
-  `KODE_KK` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `daftar_metode`
---
-
-CREATE TABLE IF NOT EXISTS `daftar_metode` (
-  `KODE_METODE` varchar(10) NOT NULL,
-  `KODE_KK` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,8 +56,16 @@ CREATE TABLE IF NOT EXISTS `daftar_ss` (
 CREATE TABLE IF NOT EXISTS `dosen` (
   `NIP` varchar(20) NOT NULL,
   `NAMA` varchar(50) NOT NULL,
-  `PASSWORD` varchar(12) NOT NULL
+  `PASSWORD` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `dosen`
+--
+
+INSERT INTO `dosen` (`NIP`, `NAMA`, `PASSWORD`) VALUES
+('1234', 'Admin', '81dc9bdb52d04dc20036dbd8313ed055'),
+('123456', 'qwertyu', 'qwert');
 
 -- --------------------------------------------------------
 
@@ -144,25 +130,12 @@ CREATE TABLE IF NOT EXISTS `mata_kuliah` (
   `HARI` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Struktur dari tabel `media`
+-- Dumping data untuk tabel `mata_kuliah`
 --
 
-CREATE TABLE IF NOT EXISTS `media` (
-  `KODE_MEDIA` varchar(10) NOT NULL,
-  `NAMA_MEDIA` varchar(35) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `media`
---
-
-INSERT INTO `media` (`KODE_MEDIA`, `NAMA_MEDIA`) VALUES
-('MDA1', 'Proyektor'),
-('MDA2', 'Papan Tulis'),
-('MDA3', 'Bahan Ajar');
+INSERT INTO `mata_kuliah` (`KODE_MK`, `NIP`, `KODE_PRODI`, `NAMA_MK`, `BEBAN_STUDI`, `SEMESTER`, `KOMPETENSI`, `DESKRIPSI`, `HARI`) VALUES
+('1234', '123456', 'S1SI', 'qwer', 0, 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -174,26 +147,6 @@ CREATE TABLE IF NOT EXISTS `mengajar` (
   `NIP` varchar(20) NOT NULL,
   `KODE_MK` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `metode`
---
-
-CREATE TABLE IF NOT EXISTS `metode` (
-  `KODE_METODE` varchar(10) NOT NULL,
-  `NAMA_METODE` varchar(35) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `metode`
---
-
-INSERT INTO `metode` (`KODE_METODE`, `NAMA_METODE`) VALUES
-('MTD1', 'Ceramah'),
-('MTD2', 'Tanya Jawab'),
-('MTD3', 'Presentasi');
 
 -- --------------------------------------------------------
 
@@ -276,20 +229,6 @@ ALTER TABLE `bacaan`
   ADD KEY `FK_MEMILIKI_3` (`KODE_MK`);
 
 --
--- Indexes for table `daftar_media`
---
-ALTER TABLE `daftar_media`
-  ADD PRIMARY KEY (`KODE_MEDIA`,`KODE_KK`),
-  ADD KEY `FK_DAFTAR_MEDIA2` (`KODE_KK`);
-
---
--- Indexes for table `daftar_metode`
---
-ALTER TABLE `daftar_metode`
-  ADD PRIMARY KEY (`KODE_METODE`,`KODE_KK`),
-  ADD KEY `FK_DAFTAR_METODE2` (`KODE_KK`);
-
---
 -- Indexes for table `daftar_ss`
 --
 ALTER TABLE `daftar_ss`
@@ -324,23 +263,11 @@ ALTER TABLE `mata_kuliah`
   ADD KEY `FK_PENANGGUNG_JAWAB` (`NIP`);
 
 --
--- Indexes for table `media`
---
-ALTER TABLE `media`
-  ADD PRIMARY KEY (`KODE_MEDIA`);
-
---
 -- Indexes for table `mengajar`
 --
 ALTER TABLE `mengajar`
   ADD PRIMARY KEY (`NIP`,`KODE_MK`),
   ADD KEY `FK_MENGAJAR2` (`KODE_MK`);
-
---
--- Indexes for table `metode`
---
-ALTER TABLE `metode`
-  ADD PRIMARY KEY (`KODE_METODE`);
 
 --
 -- Indexes for table `prasyarat`
@@ -377,7 +304,7 @@ ALTER TABLE `sub_bahasan`
 -- AUTO_INCREMENT for table `bacaan`
 --
 ALTER TABLE `bacaan`
-  MODIFY `KODE_BACAAN` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `KODE_BACAAN` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -387,20 +314,6 @@ ALTER TABLE `bacaan`
 --
 ALTER TABLE `bacaan`
   ADD CONSTRAINT `FK_MEMILIKI_3` FOREIGN KEY (`KODE_MK`) REFERENCES `mata_kuliah` (`KODE_MK`);
-
---
--- Ketidakleluasaan untuk tabel `daftar_media`
---
-ALTER TABLE `daftar_media`
-  ADD CONSTRAINT `FK_DAFTAR_MEDIA` FOREIGN KEY (`KODE_MEDIA`) REFERENCES `media` (`KODE_MEDIA`),
-  ADD CONSTRAINT `FK_DAFTAR_MEDIA2` FOREIGN KEY (`KODE_KK`) REFERENCES `kompetensi_khusus` (`KODE_KK`);
-
---
--- Ketidakleluasaan untuk tabel `daftar_metode`
---
-ALTER TABLE `daftar_metode`
-  ADD CONSTRAINT `FK_DAFTAR_METODE` FOREIGN KEY (`KODE_METODE`) REFERENCES `metode` (`KODE_METODE`),
-  ADD CONSTRAINT `FK_DAFTAR_METODE2` FOREIGN KEY (`KODE_KK`) REFERENCES `kompetensi_khusus` (`KODE_KK`);
 
 --
 -- Ketidakleluasaan untuk tabel `daftar_ss`
