@@ -1,13 +1,15 @@
-/*!
- * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    padding-top: 170px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    padding-top: 170px;
 	background: url(../Image/Background.jpg);
 	background-size:cover;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+    background-color: rgba(0, 170, 232, 0.7);
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: #cfcfcf;
 }
 
 .navbar-inverse{
@@ -15,10 +17,28 @@ body {
     border: 0;
     box-shadow:none !important;
     -webkit-box-shadow: none !important;
-	padding-top: 15px;
+	padding-top: 10px;
 	padding-bottom: 5px;
 }
 
+.navbar-right .dropdown-menu{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-right .form-control{
+    width: 250px;
+}
+
+.navbar-right .btn-block{
+    width: 104px;
+    height: 37px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 146px;
+}
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
 	background-color: transparent;
