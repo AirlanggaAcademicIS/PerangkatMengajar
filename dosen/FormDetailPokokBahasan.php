@@ -24,16 +24,17 @@
         <td width="5">:</td>
         <td width="215"><label for="textfield">
    </label>
-        <input type="text" name="textfield" id="textfield" /></td>
+        <input type="text" name="textfield" id="textfield" placeholder="Pokok Bahasan" size="30" oninvalid="this.setCustomValidity('Pokok Bahasan Harus di isi')" oninput="setCustomValidity('')" required/></td>
       </tr>
       <tr>
         <td>Metode</td>
         <td>:</td>
         <td><label>
         <select name="select4">
+		 <option value="---------">---------</option>
           <option value="Ceramah">Ceramah</option>
           <option value="Presentasi">Presentasi</option>
-		            <option value="Tanya Jawab">Tanya Jawab</option>
+		  <option value="Tanya Jawab">Tanya Jawab</option>
 
         </select>
         </label></td>
@@ -43,6 +44,7 @@
         <td>:</td>
         <td><label>
           <select name="select5">
+		  <option value="---------">---------</option>
             <option value="Proyektor">Proyektor</option>
           <option value="White Board">White Board</option>
 		            <option value="Hand out">Hand out</option>
@@ -54,6 +56,7 @@
         <td>:</td>
         <td><label>
           <select name="select6">
+		  <option value="---------">---------</option>
             <option value="50 menit">50 menit</option>
           <option value="100 menit">100 menit</option>
 		            <option value="150 menit">150 menit</option>
@@ -65,7 +68,8 @@
       <tr>
         <td height="94" valign="top">Bacaan</td>
         <td>:</td>
-        <td><label>
+        <td>
+		<label>
           <input type="checkbox" name="checkbox4" value="checkbox" />
         bacaan 1</label><br />
                   <label>
@@ -79,7 +83,7 @@
       <tr>
         <td colspan="3" align="right">
             <input name="Submit2" type="submit" value="BACK" />
-        <input type="submit" name="Submit" value="SAVE" /></td>
+        <input type="submit" name="Submit" value="NEXT" /></td>
       </tr>
     </tbody>
   </table>
