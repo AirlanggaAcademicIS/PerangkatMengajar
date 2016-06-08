@@ -35,9 +35,8 @@
                             Form<span class="caret"></span>
                             </a>
                               <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Mata Ajar Baru</a></li>
+                                <li><a href="#">Bacaan Baru</a></li>
                               </ul>
                         </li>
           			</ul>
@@ -191,12 +190,12 @@
     <tr>
       <td><strong>Mata ajar </strong></td>
       <td>:</td>
-      <td><input name="mataajar" type="text" oninvalid="this.setCustomValidity('Mata ajar harus diisi')" oninput="setCustomValidity('')" required/></td>
+      <td><input name="mataajar" type="text" placeholder="Mata Ajar" oninvalid="this.setCustomValidity('Mata ajar harus diisi')" oninput="setCustomValidity('')" required/></td>
     </tr>
     <tr>
       <td><strong>Kompetensi</strong></td>
       <td>:</td>
-      <td><textarea name="kompetensi" cols="50" oninvalid="this.setCustomValidity('kompetensi harus diisi')" oninput="setCustomValidity('')" required="required"></textarea></td>
+      <td><textarea name="kompetensi" cols="50" placeholder="Kompetensi" oninvalid="this.setCustomValidity('kompetensi harus diisi')" oninput="setCustomValidity('')" required="required"></textarea></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -227,7 +226,7 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><input type="text" name="pokokbahasan" />
-      <input type="submit" name="plus_pokokbahasan" id="plus_pokokbahasan" value="+" />
+      <input type="submit" name="plus_pokokbahasan" id="plus_pokokbahasan" value="+"  />
 	  <div class="form-group">
           <label class="col-md-4 control-label" for="sep_json"> Upload Materi</label>
           
@@ -264,9 +263,75 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
-    
+	<form id="form8" name="form8" method="post" action="">
+  <table width="347" height="280" border="0">
+    <tbody>
+      <tr>
+        <td width="113">Pokok Bahasan</td>
+        <td width="5">:</td>
+        <td width="215"><label for="textfield">
+   </label>
+        <input type="text" name="textfield" id="textfield" placeholder="Pokok Bahasan" size="30" oninvalid="this.setCustomValidity('Pokok Bahasan Harus di isi')" oninput="setCustomValidity('')" required/></td>
+      </tr>
+      <tr>
+        <td>Metode</td>
+        <td>:</td>
+        <td><label>
+        <select name="select4">
+		 <option value="---------">---------</option>
+          <option value="Ceramah">Ceramah</option>
+          <option value="Presentasi">Presentasi</option>
+		  <option value="Tanya Jawab">Tanya Jawab</option>
+
+        </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Media</td>
+        <td>:</td>
+        <td><label>
+          <select name="select5">
+		    <option value="---------">---------</option>
+            <option value="Proyektor">Proyektor</option>
+            <option value="White Board">White Board</option>
+		    <option value="Hand out">Hand out</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Waktu</td>
+        <td>:</td>
+        <td><label>
+          <select name="select6">
+		  <option value="---------">---------</option>
+          <option value="50 menit">50 menit</option>
+          <option value="100 menit">100 menit</option>
+		  <option value="150 menit">150 menit</option>
+		  <option value="200 menit">200 menit</option>
+          <option value="250 menit">250 menit</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td height="94" valign="top">Bacaan</td>
+        <td>:</td>
+        <td>
+		<label>
+          <input type="checkbox" name="checkbox4" value="checkbox" />
+        bacaan 1</label><br />
+                  <label>
+          <input type="checkbox" name="checkbox5" value="checkbox" />
+          bacaan 2</label><br />
+          <label>
+          <input type="checkbox" name="checkbox6" value="checkbox" />
+          bacaan 3</label></td>
+      </tr>
+      
+    </tbody>
   </table>
-   <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+    
+ <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >BACK</button> </table>
+   <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >NEXT</button>
                 </div>
                 <p></p>
                 </div>
