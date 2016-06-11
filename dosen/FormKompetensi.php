@@ -39,9 +39,7 @@ while($hasil = mysql_fetch_array($r)){
 	
 <?php   
 }
-?>
-	  
-	  </td>
+?>	  </td>
     </tr>
 	
     <tr>
@@ -53,14 +51,12 @@ while($hasil = mysql_fetch_array($r)){
 	?>
       <td><input name="kompetensi" cols="50" value="<?php echo $hasil['KOMPETENSI'];?>" readonly></textarea>
 
-	<p>
-	</p>
+	<p>	</p>
 	
 	
 <?php   
 }
-?>
-	  </td>
+?>	  </td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -72,47 +68,19 @@ while($hasil = mysql_fetch_array($r)){
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><p>
-        <input type="text" name="subkomp" id="subkomp" placeholder="Sub Kompetensi"/>
-        <input type="button" name="plus_subkomp" id="plus_subkomp" value="+" />
+        <input type="text" name="subkomp" id="subkomp" placeholder="Sub Kompetensi" oninvalid="this.setCustomValidity('Kompetensi khusus harus diisi')" oninput="setCustomValidity('')" required/>
       </p>        </td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><textarea name="list_subkomp" id="list_subkomp" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;" readonly></textarea>
-	   <script>
-			var x=1;
-			$(document).ready(function(){
-			
-			});
-		</script>
-	  </td>
+      <td>
+	    <strong>Pokok Bahasan</strong></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><strong>Pokok Bahasan </strong></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><input type="text" name="pokokbahasan" id="pokokbahasan" placeholder="Pokok bahasan"/>
-      <input type="button" name="plus_pokokbahasan" id="plus_pokokbahasan" value="+" />
-	  <div class="form-group">
-          <label class="col-md-4 control-label" for="sep_json"> Upload Materi</label>
-          
-       <input type="file" id="upload_materi" name="upload_materi" class="input-file" accept=".txt,.docx,.pdf" placeholder="Upload Materi">
-            
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><textarea name="list_pokokbahasan" readonly="readonly" id="list_pokokbahasan" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;"></textarea>
-	
-
-	 	</td>
+      <td><input type="text" name="pokokbahasan" id="pokokbahasan" placeholder="Pokok bahasan" oninvalid="this.setCustomValidity('Pokok bahasan harus diisi')" oninput="setCustomValidity('')" required/></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -123,31 +91,25 @@ while($hasil = mysql_fetch_array($r)){
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><input type="text" name="subpokok" id="subpokok" placeholder="Sub Pokok Bahasan"/>
-      <input type="button" name="plus_subpokok" id="plus_subpokok" value="+" /></td>
+        <input type="button" name="plus_subpokok" id="plus_subpokok" value="+" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td><textarea name="list_subpokok" readonly="readonly" id="list_subpokok" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;"></textarea>
-	 <script>
-			var x=1;
-			var y=1;
+      <td><textarea name="list_subpokok" readonly="readonly" id="list_subpokok" style="width: 250px; height: 75px; border: 0; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;background-color: rgba(255, 255, 255, 0.5); resize:none;"></textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>
+</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><script>
 			var z=1;
 			$(document).ready(function(){
-				$("#plus_subkomp").click(function(){
-					if ($('#subkomp').val() != '') {
-						$('#list_subkomp').append(x+". "+$("#subkomp").val()+"\n");
-						$("#subkomp").val("");
-						x++;
-					}
-				});
-				$("#plus_pokokbahasan").click(function(){
-					if ($('#pokokbahasan').val() != '') {
-						$('#list_pokokbahasan').append(y+". "+$("#pokokbahasan").val()+"\n");
-						$("#pokokbahasan").val("");
-						y++;
-					}
-				});
 				$("#plus_subpokok").click(function(){
 					if ($('#subpokok').val() != '') {
 						$('#list_subpokok').append(z+". "+$("#subpokok").val()+"\n");
@@ -156,20 +118,17 @@ while($hasil = mysql_fetch_array($r)){
 					}
 				});
 			});
-		</script>	
-
-	  	</td>
+		</script>	  	</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><input type="submit" name="simpan" value="save and add" class="button facebook"/>
+        <input type="submit" name="next" value="next" class="button facebook"/></td>
     </tr>
-    
   </table>
   
-   <input type="submit" name="Submit" value="Submit" class="button facebook"/>
-  </form>  
+                            </form>  
                 </div>
                 <p></p>
   
