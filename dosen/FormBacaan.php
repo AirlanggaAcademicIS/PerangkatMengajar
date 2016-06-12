@@ -1,59 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Bacaan</title>
+    <link href="Assets/Css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="bacaan.php">
-<table width="415" border="0">
-    <tr>
-        <td width="250">Nama Pengarang</td>
-        <td width="3">:</td>
-        <td width="335">
-            <label for="textfield"></label>
-            <input name="namapengarang" type="text" placeholder="Nama Pengarang" size="50" oninvalid="this.setCustomValidity('Isikan Nama Pengarang')" oninput="setCustomValidity('')" required/>
-        </td>
-    </tr>
-    <tr>
-        <td>Tahun Terbit </td>
-        <td>:</td>
-        <td>
-            <label for="textfield2"></label>
-            <input name="tahunterbit" type="number" placeholder="Tahun Terbit" size="50" oninvalid="this.setCustomValidity('Isikan Tahun Terbit')" oninput="setCustomValidity('')" required/>
-        </td>
-    </tr>
-    <tr>
-        <td>Judul Buku </td>
-        <td>:</td>
-        <td>
-            <label for="textfield3"></label>
-            <input name="judulbuku" type="text" placeholder="Judul Buku" size="50" oninvalid="this.setCustomValidity('Isikan Judul Buku')" oninput="setCustomValidity('')" required/>
-        </td>
-    </tr>
-    <tr>
-        <td>Kota Tempat Terbit </td>
-        <td>:</td>
-        <td>
-            <label for="textfield4"></label>
-            <input name="kotatempatterbit" type="text" placeholder="Kota Tempat Terbit " size="50" oninvalid="this.setCustomValidity('Isikan Kota Tempat Terbit')" oninput="setCustomValidity('')" required/>
-        </td>
-    </tr>
-    <tr>
-        <td>Nama Penerbit</td>
-        <td>:</td>
-        <td>
-            <label for="textfield5"></label>
-            <input name="namapenerbit" type="text" placeholder="Nama Penerbit" size="50" oninvalid="this.setCustomValidity('Isikan Nama Penerbit')" oninput="setCustomValidity('')" required/>
-        </td>
-    </tr>
+<div class="col-md-12">    
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textfield">Nama Pengarang</label>
+        <div class="col-md-5">
+            <input name="namapengarang" type="text" placeholder="Nama Pengarang" class="form-control input-md" oninvalid="this.setCustomValidity('Isikan Nama Pengarang')" oninput="setCustomValidity('')" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textfield2">Tahun Terbit</label>
+        <div class="col-md-5">
+            <input name="tahunterbit" type="number" placeholder="Tahun Terbit" class="form-control input-md" oninvalid="this.setCustomValidity('Isikan Tahun Terbit')" oninput="setCustomValidity('')" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textfield3">Judul Buku</label>
+        <div class="col-md-5">    
+            <input name="judulbuku" type="text" placeholder="Judul Buku" oninvalid="this.setCustomValidity('Isikan Judul Buku')" oninput="setCustomValidity('')" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textfield4">Kota Tempat Terbit</label>
+        <div class="col-md-5">
+            <input name="kotatempatterbit" type="text" placeholder="Kota Tempat Terbit" class="form-control input-md" oninvalid="this.setCustomValidity('Isikan Kota Tempat Terbit')" oninput="setCustomValidity('')" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textfield5">Nama Penerbit</label>
+        <div class="col-md-5">
+            <input name="namapenerbit" type="text" placeholder="Nama Penerbit" class="form-control input-md" oninvalid="this.setCustomValidity('Isikan Nama Penerbit')" oninput="setCustomValidity('')" required>
+        </div>
+    </div>
+</div>    
     <tr>
         <td colspan="3" align="right">
             <input type="submit" name="Submit" value="Submit" class="button facebook"/>
         </td>
     </tr>
-</table>
+
 </form>
 </body>
 </html>
