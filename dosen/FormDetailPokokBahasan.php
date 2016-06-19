@@ -44,10 +44,10 @@
         <td>:</td>
         <td><label>
           <select name="select5">
-		  <option value="---------">---------</option>
+		    <option value="---------">---------</option>
             <option value="Proyektor">Proyektor</option>
-          <option value="White Board">White Board</option>
-		            <option value="Hand out">Hand out</option>
+            <option value="White Board">White Board</option>
+		    <option value="Hand out">Hand out</option>
           </select>
         </label></td>
       </tr>
@@ -57,10 +57,10 @@
         <td><label>
           <select name="select6">
 		  <option value="---------">---------</option>
-            <option value="50 menit">50 menit</option>
+          <option value="50 menit">50 menit</option>
           <option value="100 menit">100 menit</option>
-		            <option value="150 menit">150 menit</option>
-					<option value="200 menit">200 menit</option>
+		  <option value="150 menit">150 menit</option>
+		  <option value="200 menit">200 menit</option>
           <option value="250 menit">250 menit</option>
           </select>
         </label></td>
@@ -75,7 +75,6 @@
                   <label>
           <input type="checkbox" name="checkbox5" value="checkbox" />
           bacaan 2</label><br />
-        
           <label>
           <input type="checkbox" name="checkbox6" value="checkbox" />
           bacaan 3</label></td>
